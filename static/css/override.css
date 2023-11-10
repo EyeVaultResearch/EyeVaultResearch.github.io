@@ -1,0 +1,15 @@
+#sortable-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+#sortable-table th, #sortable-table td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+}
+
+#sortable-table th {
+    background-color: #f2f2f2;
+}
