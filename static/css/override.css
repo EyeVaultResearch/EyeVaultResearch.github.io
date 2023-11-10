@@ -13,3 +13,19 @@
 #sortable-table th {
     background-color: #f2f2f2;
 }
+
+th{
+    cursor: pointer;
+}
+
+th:hover {
+    background-color: pink;
+}
+
+.asc:after {
+    content: ' ▲';
+}
+
+.desc:after {
+    content: ' ▼';
+}
