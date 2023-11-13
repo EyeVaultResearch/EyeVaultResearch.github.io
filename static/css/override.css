@@ -1,13 +1,18 @@
+img#header-image{
+max-width: 20%!important;
+}
+
 #sortable-table {
     border-collapse: collapse;
-    width: 100%;
     font-size: 0.8rem;
+    width:100%;
 }
 
 #sortable-table th, #sortable-table td {
     border: 1px solid #ddd;
     padding: 4px;
     text-align: left;
+    
 }
 
 #sortable-table th {
@@ -16,16 +21,40 @@
 
 th{
     cursor: pointer;
+    font-weight: 900!important;
+    color: #fff!important;
 }
 
 th:hover {
-    background-color: pink;
+    background-color: rgb(100, 144, 230)!important;
 }
 
 .asc:after {
     content: ' ▲';
+    color: #fff!important;
 }
 
 .desc:after {
     content: ' ▼';
+    color: #fff!important;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    max-width: 1000px; /* Set a fixed height for the container */
+    border: 2px solid #dcdcdc; /* Add a black 2px border */
+}
+
+
+
+thead th {
+    position: sticky!important;
+    top: 0!important;
+    background-color: rgb(48, 109, 232)!important;
+    z-index: 1!important;
+}
+
+table#sortable-table thead{
+    font-weight: bolder!important;
 }
