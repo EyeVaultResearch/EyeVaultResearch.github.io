@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EyeVault &mdash; Data Visualizations</title>
+<meta name="description" content="Reporting trends, dataset landscape, and eye-tracker timeline charts for the EyeVault survey of 109 eye tracking datasets.">
+<meta property="og:title" content="EyeVault &mdash; Data Visualizations">
+<meta property="og:description" content="Reporting trends, dataset landscape, and eye-tracker timeline charts for the EyeVault Research Database.">
+<link rel="icon" type="image/png" href="eyelogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead dataviz-head">
+  <div class="wrap">
+    <div class="mast-grid">
+      <div class="mast-id">
+        <a class="logo-link" href="index.html" aria-label="EyeVault home">
+          <img class="logo" src="eyelogo.png" alt="" width="72" height="72">
+        </a>
+        <h1><a class="wordmark-link" href="index.html">EyeVault</a></h1>
+        <p class="tagline">Data visualizations</p>
+      </div>
+      <div class="overview">
+        <h2>Three views of the same survey</h2>
+        <p>These charts explore the <a href="index.html">109-dataset index</a> from a different angle: how completely participant attributes get reported as the field has grown, where individual datasets sit on year versus completeness, and which named tracker models show up when.</p>
+      </div>
+    </div>
+    <nav class="page-nav"><a class="pagelink" href="index.html">&larr; Back to dataset index</a></nav>
+  </div>
+</header>
+
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Reporting over time</h2></div>
+    <p class="sec-note">Percentage of that year's datasets reporting a chosen participant attribute. Small yearly totals (shown in the tooltip) can make early or sparse years noisy &mdash; a single dataset either reports something or it doesn't.</p>
+    <div class="wall-box">
+      <div class="chart-controls">
+        <label for="trendAttr">Attribute</label>
+        <select id="trendAttr" aria-label="Choose a participant attribute to trend over time"></select>
+      </div>
+      <div class="chart" id="trendChart"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Reporting by category</h2></div>
+    <p class="sec-note">The same 21 participant attributes, sliced by a study characteristic instead of by year. Darker cells mean a larger share of that group reports the attribute; hover a cell for exact counts.</p>
+    <div class="wall-box">
+      <div class="chart-controls">
+        <span class="ctrl"><label for="heatmapDim">Group by</label>
+        <select id="heatmapDim" aria-label="Choose how to group datasets for the heatmap"></select></span>
+      </div>
+      <div class="chart" id="heatmapChart"></div>
+      <div class="chart-legend" id="heatmapLegend"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Dataset landscape</h2></div>
+    <p class="sec-note">Each dataset placed by publication year and how completely it reports participant attributes. Bubble size is the number of participants; color is dataset availability. Select a bubble to open that dataset in the index.</p>
+    <div class="wall-box">
+      <div class="chart" id="landscapeChart"></div>
+      <div class="chart-legend" id="landscapeLegend"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Explore the data</h2></div>
+    <p class="sec-note">Pick any two measures for the axes and a study characteristic to color by. Select a point to open that dataset in the index.</p>
+    <div class="wall-box">
+      <div class="chart-controls">
+        <span class="ctrl"><label for="explorerX">X axis</label>
+        <select id="explorerX" aria-label="Choose the X axis measure"></select></span>
+        <span class="ctrl"><label for="explorerY">Y axis</label>
+        <select id="explorerY" aria-label="Choose the Y axis measure"></select></span>
+        <span class="ctrl"><label for="explorerColor">Color by</label>
+        <select id="explorerColor" aria-label="Choose what to color points by"></select></span>
+      </div>
+      <div class="chart" id="explorerChart"></div>
+      <div class="chart-legend" id="explorerLegend"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Eye-tracker timeline</h2></div>
+    <p class="sec-note">When the most-used, explicitly named tracker models appear in the collection. Dot size reflects how many datasets used that model in a given year.</p>
+    <div class="wall-box">
+      <div class="chart" id="timelineChart"></div>
+      <div class="chart-legend" id="timelineLegend"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Built from the EyeVault survey of 109 eye tracking datasets published or utilised in ETRA proceedings, 2000&ndash;2023.</p>
+    <p><a href="index.html">Browse and filter the full dataset index &rarr;</a></p>
+  </div>
+</footer>
+
+<div id="tip" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+</body>
+</html>
